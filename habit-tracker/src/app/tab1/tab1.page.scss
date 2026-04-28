@@ -1,0 +1,230 @@
+:host {
+  --phone-bg: #f1efe8;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f0;
+  --text-primary: #1a1a1a;
+  --text-secondary: #5f5e5a;
+  --text-tertiary: #888780;
+  --text-disabled: #b4b2a9;
+  --border-light: rgba(0,0,0,0.08);
+  --border-medium: rgba(0,0,0,0.1);
+  --accent: #1D9E75;
+  --check-border: rgba(0,0,0,0.25);
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+ion-header ion-toolbar {
+  --background: #ffffff;
+  --border-color: rgba(0,0,0,0.1);
+  --border-width: 0 0 0.5px 0;
+  --border-style: solid;
+  --min-height: 48px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 10px;
+  --padding-bottom: 12px;
+}
+
+ion-title {
+  font-size: 17px;
+  font-weight: 500;
+  color: #1a1a1a;
+  padding: 0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+ion-content::part(background) {
+  background: var(--bg-secondary);
+}
+
+.date-row {
+  background: var(--bg-primary);
+  padding: 8px 16px 4px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.progress-row {
+  background: var(--bg-primary);
+  padding: 6px 16px 14px;
+  border-bottom: 0.5px solid var(--border-light);
+}
+
+.progress-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.progress-track {
+  background: var(--border-light);
+  border-radius: 3px;
+  height: 6px;
+}
+
+.progress-fill {
+  background: var(--accent);
+  border-radius: 3px;
+  height: 6px;
+  transition: width 0.3s;
+}
+
+.habit-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 0.5px solid var(--border-light);
+  background: var(--bg-primary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid var(--check-border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.check.done {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.check svg {
+  display: none;
+}
+
+.check.done svg {
+  display: block;
+}
+
+.habit-name {
+  font-size: 15px;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.habit-name.done {
+  color: var(--text-tertiary);
+  text-decoration: line-through;
+}
+
+.habit-freq-text {
+  font-size: 12px;
+  color: var(--text-disabled);
+}
+
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.45);
+  align-items: flex-end;
+  z-index: 1000;
+}
+
+.modal-backdrop.open {
+  display: flex;
+}
+
+.modal-sheet {
+  background: var(--bg-primary);
+  border-radius: 16px 16px 0 0;
+  width: 100%;
+  padding: 0 0 20px;
+}
+
+.modal-handle {
+  width: 36px;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 2px;
+  margin: 10px auto 0;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px 8px;
+  border-bottom: 0.5px solid var(--border-light);
+}
+
+.modal-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.modal-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.modal-cancel {
+  color: var(--text-tertiary);
+}
+
+.modal-save {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.modal-save:disabled {
+  color: var(--text-disabled);
+}
+
+.modal-field {
+  padding: 10px 16px;
+  border-bottom: 0.5px solid var(--border-light);
+}
+
+.modal-field label {
+  display: block;
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.modal-field input,
+.modal-field select {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 15px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  outline: none;
+  padding: 0;
+}
+
+ion-fab-button {
+  --background: #1D9E75;
+  --background-activated: #1D9E75;
+  --background-hover: #1D9E75;
+  --border-radius: 8px;
+  --width: 48px;
+  --height: 48px;
+  --box-shadow: none;
+}
+
+ion-fab-button ion-icon {
+  color: #ffffff;
+  font-size: 26px;
+}
