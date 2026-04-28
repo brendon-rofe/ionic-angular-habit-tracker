@@ -1,0 +1,120 @@
+:host {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+  --text-primary: #ffffff;
+  --text-secondary: #5f5e5a;
+  --text-tertiary: #888780;
+  --border-light: rgba(255,255,255,0.08);
+  --border-medium: rgba(255,255,255,0.1);
+  --accent: #1D9E75;
+  --stat-card-bg: #2a2a2a;
+}
+
+ion-header ion-toolbar {
+  --background: #1a1a1a;
+  --border-color: rgba(255,255,255,0.1);
+  --border-width: 0 0 0.5px 0;
+  --border-style: solid;
+  --min-height: 48px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 10px;
+  --padding-bottom: 12px;
+  --box-shadow: none;
+}
+
+ion-title {
+  font-size: 17px;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 0;
+}
+
+ion-content::part(background) {
+  background: #242424;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #242424;
+}
+
+.stat-card {
+  background: var(--stat-card-bg);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #5f5e5a;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 22px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.stat-sub {
+  font-size: 11px;
+  color: #888780;
+  margin-top: 2px;
+}
+
+.chart-card {
+  background: #1a1a1a;
+  margin: 0 16px 12px;
+  border-radius: 12px;
+  border: 0.5px solid rgba(255,255,255,0.1);
+  padding: 14px;
+}
+
+.chart-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.per-habit-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.per-habit-name {
+  font-size: 12px;
+  color: #5f5e5a;
+  width: 100px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.per-habit-track {
+  flex: 1;
+  background: rgba(255,255,255,0.08);
+  border-radius: 3px;
+  height: 8px;
+}
+
+.per-habit-fill {
+  background: #1D9E75;
+  border-radius: 3px;
+  height: 8px;
+}
+
+.per-habit-pct {
+  font-size: 11px;
+  color: #888780;
+  width: 28px;
+  text-align: right;
+  flex-shrink: 0;
+}
