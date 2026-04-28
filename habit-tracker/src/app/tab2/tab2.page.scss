@@ -1,0 +1,204 @@
+:host {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+  --text-primary: #ffffff;
+  --text-secondary: #5f5e5a;
+  --text-tertiary: #888780;
+  --text-disabled: #666666;
+  --border-light: rgba(255,255,255,0.08);
+  --border-medium: rgba(255,255,255,0.1);
+  --accent: #1D9E75;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+ion-header ion-toolbar {
+  --background: #1a1a1a;
+  --border-color: rgba(255,255,255,0.1);
+  --border-width: 0 0 0.5px 0;
+  --border-style: solid;
+  --min-height: 48px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 10px;
+  --padding-bottom: 12px;
+  --box-shadow: none;
+}
+
+ion-title {
+  font-size: 17px;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 0;
+}
+
+ion-buttons[slot="end"] {
+  padding-right: 16px;
+}
+
+.edit-btn {
+  font-size: 13px;
+  color: #1D9E75;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.section-hdr {
+  font-size: 12px;
+  color: #5f5e5a;
+  padding: 12px 16px 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #242424;
+}
+
+.habit-card {
+  background: #1a1a1a;
+  border-bottom: 0.5px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  padding: 13px 16px;
+  gap: 12px;
+}
+
+.habit-name {
+  flex: 1;
+  font-size: 15px;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.freq-pill {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.freq-pill.Daily { background: #E1F5EE; color: #0F6E56; }
+.freq-pill.Weekdays { background: #E6F1FB; color: #185FA5; }
+.freq-pill.Weekends { background: #FAEEDA; color: #854F0B; }
+.freq-pill.Weekly { background: #EEEDFE; color: #534AB7; }
+
+.chevron-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.del-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #E24B4A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.45);
+  align-items: flex-end;
+  z-index: 1000;
+}
+
+.modal-backdrop.open {
+  display: flex;
+}
+
+.modal-sheet {
+  background: #1a1a1a;
+  border-radius: 16px 16px 0 0;
+  width: 100%;
+  padding: 0 0 20px;
+}
+
+.modal-handle {
+  width: 36px;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+  margin: 10px auto 0;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px 8px;
+  border-bottom: 0.5px solid rgba(255,255,255,0.08);
+}
+
+.modal-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.modal-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.modal-cancel {
+  color: #888780;
+}
+
+.modal-save {
+  color: #1D9E75;
+  font-weight: 500;
+}
+
+.modal-save:disabled {
+  color: #666666;
+}
+
+.modal-field {
+  padding: 10px 16px;
+  border-bottom: 0.5px solid rgba(255,255,255,0.08);
+}
+
+.modal-field label {
+  display: block;
+  font-size: 11px;
+  color: #5f5e5a;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.modal-field input,
+.modal-field select {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 15px;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  outline: none;
+  padding: 0;
+}
+
+ion-fab-button {
+  --background: #1D9E75;
+  --background-activated: #1D9E75;
+  --background-hover: #1D9E75;
+  --border-radius: 8px;
+  --width: 48px;
+  --height: 48px;
+  --box-shadow: none;
+}

@@ -1,39 +1,30 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonFab, IonFabButton } from '@ionic/angular/standalone';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HabitsService, Habit } from '../services/habits.service';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonFab, IonFabButton, FormsModule, CommonModule],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonFab, IonFabButton, CommonModule, FormsModule],
 })
 export class Tab1Page {
-  habits = [
-    { id: 1, name: 'Morning walk', freq: 'Daily', completed: false },
-    { id: 2, name: 'Read for 20 mins', freq: 'Daily', completed: false },
-    { id: 3, name: 'Drink 2L of water', freq: 'Daily', completed: false },
-    { id: 4, name: 'Meditate', freq: 'Weekdays', completed: false },
-    { id: 5, name: 'Evening stretch', freq: 'Weekends', completed: false },
-  ];
-  nextId = 6;
-
-  today = new Date();
   todayDate = '';
 
-  isModalOpen = false;
-  newHabitName = '';
-  newHabitFreq = 'Daily';
-
-  constructor() {
-    this.todayDate = this.fmt(this.today);
+  constructor(public habitsService: HabitsService) {
+    this.todayDate = this.fmt(new Date());
   }
 
   fmt(d: Date): string {
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     return `${days[d.getDay()]}, ${d.getDate()} ${months[d.getMonth()]}`;
+  }
+
+  get habits(): Habit[] {
+    return this.habitsService.habits();
   }
 
   get progressLabel(): string {
@@ -47,9 +38,12 @@ export class Tab1Page {
   }
 
   toggleHabit(id: number) {
-    const h = this.habits.find(h => h.id === id);
-    if (h) h.completed = !h.completed;
+    this.habitsService.toggleHabit(id);
   }
+
+  isModalOpen = false;
+  newHabitName = '';
+  newHabitFreq = 'Daily';
 
   openModal() {
     this.newHabitName = '';
@@ -64,8 +58,7 @@ export class Tab1Page {
   saveFromToday() {
     const name = this.newHabitName.trim();
     if (name.length < 2) return;
-
-    this.habits.push({ id: this.nextId++, name, freq: this.newHabitFreq, completed: false });
+    this.habitsService.addHabit(name, this.newHabitFreq);
     this.closeModal();
   }
 }
